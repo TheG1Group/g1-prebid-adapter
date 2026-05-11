@@ -1,0 +1,60 @@
+{
+	"name": "@theg1team/prebid-adapter",
+	"version": "0.1.0",
+	"description": "g1.network Prebid.js bidder adapter. OSS MIT. Plug-in publishers' Prebid wrapper для bidding на g1.network SSP inventory.",
+	"keywords": [
+		"prebid",
+		"prebid.js",
+		"bidder-adapter",
+		"ssp",
+		"openrtb",
+		"g1-network",
+		"header-bidding"
+	],
+	"author": "The G1 Team <adops@g1.network>",
+	"license": "MIT",
+	"homepage": "https://oss.g1.network/prebid-adapter",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TheG1Team/g1-prebid-adapter.git"
+	},
+	"bugs": {
+		"url": "https://github.com/TheG1Team/g1-prebid-adapter/issues"
+	},
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"files": ["dist", "README.md", "LICENSE"],
+	"sideEffects": false,
+	"scripts": {
+		"build": "tsup src/index.ts --format esm,cjs --dts --clean --target es2020",
+		"dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"prepublishOnly": "pnpm build"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"tsup": "^8.0.0",
+		"typescript": "^5.7.0",
+		"vitest": "^2.1.0"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org"
+	},
+	"packageManager": "pnpm@10.33.0"
+}
