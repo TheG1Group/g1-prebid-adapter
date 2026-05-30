@@ -16,7 +16,7 @@
 	"homepage": "https://oss.g1.network/prebid-adapter",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/TheG1Group/g1-prebid-adapter.git"
+		"url": "git+https://github.com/TheG1Group/g1-prebid-adapter.git"
 	},
 	"bugs": {
 		"url": "https://github.com/TheG1Group/g1-prebid-adapter/issues"
